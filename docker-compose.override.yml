@@ -6,5 +6,7 @@ services:
     build:
       context: go
       dockerfile: cmd/api/Dockerfile
+    environment:
+      - REDIS_HOST=redis
     networks:
       - private
