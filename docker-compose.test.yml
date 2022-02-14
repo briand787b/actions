@@ -12,5 +12,7 @@ services:
       -coverprofile=testoutput/coverage.out ./... > testoutput/report.json"
     volumes:
       - ./go/testoutput:/workspace/testoutput
+    environment:
+      - REDIS_INTEGRATION_TEST_HOST=redis
     networks:
       - private
