@@ -28,6 +28,8 @@ jobs:
         path: go/testoutput/coverage.out
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
+      with:
+        projectBaseDir: go
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io
