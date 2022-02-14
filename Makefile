@@ -1,8 +1,10 @@
 # vars
-DOCKERCMD=docker
 DC=docker-compose
-# DCTEST=$(DC) -f docker-compose.yml -f docker-compose.test.yml
-DCTEST=$(DC) -f docker-compose.test.yml
+DCTEST=$(DC) -f docker-compose.yml -f docker-compose.test.yml
+# DCTEST=$(DC) -f docker-compose.test.yml
+
+build-api-docker-image:
+	$(DC) build api
 
 # run continuous integration tests
 # remember to add steps for removing volumes if they get added

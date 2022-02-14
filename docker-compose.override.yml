@@ -1,4 +1,10 @@
 version: '3.8'
 
 services:
-  # services will go here
+  api:
+    image: api-local
+    build:
+      context: go
+      dockerfile: cmd/api/Dockerfile
+    networks:
+      - private

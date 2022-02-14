@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ci-test:
-    image: app-local-builder
+    image: api-local-builder
     build:
       context: go
       dockerfile: cmd/api/Dockerfile
@@ -14,6 +14,3 @@ services:
       - ./tmp:/workspace/tmp
     networks:
       - private
-
-networks:
-  private:
