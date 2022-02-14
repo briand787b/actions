@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 
+	"actions/internal/client/redis"
 	"actions/internal/div"
 	"actions/internal/sum"
 )
@@ -11,4 +14,10 @@ import (
 func main() {
 	fmt.Printf("4 + 1 = %d\n", sum.Sum(4, 1))
 	fmt.Printf("4 / 1 = %d\n", div.CustomDivide(4, 1))
+
+	// all base configuration is done in the `main` pkg
+	_, err := redis.NewRedisClient(os.Getenv(redis.RedisHostEnvVar))
+	if err != nil {
+		log.Fatalf("could not connect to redis")
+	}
 }
