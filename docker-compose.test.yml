@@ -9,8 +9,8 @@ services:
       target: builder
     command: >
       /bin/bash -c "go test -json -race -covermode=atomic
-      -coverprofile=tmp/coverage.out ./... > tmp/report.json"
+      -coverprofile=testoutput/coverage.out ./... > testoutput/report.json"
     volumes:
-      - ./tmp:/workspace/tmp
+      - ./go/testoutput:/workspace/testoutput
     networks:
       - private
