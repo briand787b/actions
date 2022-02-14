@@ -26,5 +26,7 @@ jobs:
       with:
         name: code-coverage-report
         path: go/testoutput/coverage.out
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
     - name: Build production image
       run: make build-api-docker-image
