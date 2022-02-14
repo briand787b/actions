@@ -20,11 +20,11 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: test-suite-report
-        path: testoutput/report.json
+        path: go/testoutput/report.json
     - name: Archive code coverage results
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
-        path: testoutput/coverage.out
+        path: go/testoutput/coverage.out
     - name: Build production image
       run: make build-api-docker-image
