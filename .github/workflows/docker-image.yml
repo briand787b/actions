@@ -18,3 +18,13 @@ jobs:
       run: make ci-test
     - name: Build production image
       run: make build-api-docker-image
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: testoutput/coverage.out
+    - name: Archive test run report
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-suite-report
+        path: testoutput/report.json
