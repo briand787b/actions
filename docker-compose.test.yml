@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ci-test:
+    image: api-local-builder
+    build:
+      context: go
+      dockerfile: cmd/api/Dockerfile
+      target: builder
+    command: >
+      /bin/bash -c "go test -json -race -covermode=atomic
+      -coverprofile=tmp/coverage.out ./... > tmp/report.json"
+    volumes:
+      - ./tmp:/workspace/tmp
+    networks:
+      - private

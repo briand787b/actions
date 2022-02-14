@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  api:
+    image: api-local
+    build:
+      context: go
+      dockerfile: cmd/api/Dockerfile
+    networks:
+      - private
