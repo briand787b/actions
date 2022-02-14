@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_Integration_Redis_Client_Prints_Msg(t *testing.T) {
+func TestIntegrationRedisClientPrintsMsg(t *testing.T) {
 	// arrange
 	SUT := redistest.Redis(t)
 
